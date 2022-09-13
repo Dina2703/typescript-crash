@@ -69,3 +69,48 @@ const user2: User = {
 let cid: any = 1;
 // let customerId = <number>cid;  or
 let customerId = cid as number;
+
+//Functions
+//function funcName(): typeOfReturnValue {}
+function addNum(x: number, y: number): number {
+  return x + y;
+}
+
+console.log(addNum(2, 4));
+
+//Void type, allows to specify more than one type of return value for a function.
+function log(message: string | number): void {
+  console.log(message);
+}
+//now we can pass into 'log()' string or number.
+// log("hello");
+// log(5);
+
+//Interfaces  --- it's almost similar to 'type' for discribing  object, but type can be used with primitives and with unions(ex:
+// type Point = number | string
+// const p: Point = 1
+//) , but it's not gonna work with 'interface'.
+interface UserInterface {
+  readonly id: number; // with 'readonly' property you can not assign a value into it.
+  name: string;
+  age?: number; // put '?' to make it optional property.
+}
+
+const user3: UserInterface = {
+  id: 10,
+  name: "John",
+};
+
+console.log(user3);
+
+//Interface with Functions
+
+interface MathFunc {
+  (x: number, y: number): number;
+}
+
+const add: MathFunc = (x: number, y: number): number => x + y;
+const sub: MathFunc = (x: number, y: number): number => x - y;
+
+console.log(add(3, 5));
+console.log(sub(5, 2));

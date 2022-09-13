@@ -56,3 +56,22 @@ const user2 = {
 let cid = 1;
 // let customerId = <number>cid;  or
 let customerId = cid;
+//Functions
+//function funcName(): typeOfReturnValue {}
+function addNum(x, y) {
+    return x + y;
+}
+console.log(addNum(2, 4));
+//Void type, allows to specify more than one type of return value for a function.
+function log(message) {
+    console.log(message);
+}
+const user3 = {
+    id: 10,
+    name: "John",
+};
+console.log(user3);
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+console.log(add(3, 5));
+console.log(sub(5, 2));
