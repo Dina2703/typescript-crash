@@ -75,3 +75,42 @@ const add = (x, y) => x + y;
 const sub = (x, y) => x - y;
 console.log(add(3, 5));
 console.log(sub(5, 2));
+//Classes  --- are used to create Objects. constructor() method will run any time when we instantiated the object, like:
+// const sam = new Person()
+class Person {
+    constructor(age, name) {
+        this.age = age;
+        this.name = name;
+        console.log(`My name is ${name} and I'm ${age} years old`);
+    }
+}
+const sam = new Person(25, "Sam");
+const lee = new Person(45, "Lee");
+sam.age = 27;
+//Data Modifiers
+//By default Class properties are public, any can access them and change their values. However we can change them to 'public', 'private' or 'protected'.
+//with 'private' infront of a propery, you can access and change the property within the class, and 'mike.age = 2'; will give an error.
+class Person2 {
+    constructor(age, name) {
+        this.age = age;
+        this.name = name;
+        console.log(`My name is ${name} and I'm ${age} years old`);
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const mike = new Person2(30, "Mike ");
+// mike.age = 2; //this does'n work, the propery is with 'private'
+console.log(mike.register());
+class Person3 {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return "Hello " + this.name;
+    }
+}
+const anna = new Person3(2, "Anna");
+console.log(anna.register());
