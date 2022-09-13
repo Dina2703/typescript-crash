@@ -1,0 +1,16 @@
+Browser does NOT read Typescript file, so we have to compile it into Javascript.
+
+---------------   Tipescript Compiler  --------------
+to compile tsc file into js, run 'tsc watch-- <>file name<>', like 'tsc watch-- index'.
+By default tsc file compiles to ES5 as you see it uses 'var' since 'let' and 'const' was introdust in ES6. But you can change it in config file, so it compiles down to ES6, or any javacsript version you want.
+---------------   Config File    -------------------
+to create a config file,
+run 'tsc --init' 
+To change javacsript version, change --> "target": "es2016" to --->, then run 'tsc' or 'tsc --watch' to compile the 'ts' file, you will see now it uses 'let' instead of 'var'.
+
+------------------   FOLDER STRUCTURE    ------------------
+when nested folder structure, can use 
+"outFile": "./"  , you can define name of a folder, where you want to put the compiled js file to.
+"outFile": "./dist"   - here we define the folder name 'dist', so when TSC file compiles newly JS file gets into 'dist' folder.
+"outDir": "./",   <--- this is to specify our source code. 
+"outDir": "./src",    now we specify the folder name 'src', and 'index.ts' goes into 'src' folder.
