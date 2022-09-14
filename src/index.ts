@@ -182,3 +182,28 @@ class Person3 implements PersonInterface {
 
 const anna = new Person3(2, "Anna");
 console.log(anna.register());
+
+//Extending Class or Subclasses
+class Employee extends Person3 {
+  position: string;
+
+  constructor(id: number, name: string, position: string) {
+    super(id, name);
+    this.position = position;
+  }
+}
+
+const emp = new Employee(3, "Sam", "Developer");
+
+console.log(emp.position);
+console.log(emp.register());
+
+//Generics  -- used to build reusable components. <T> - like a placeholder of the type.
+function getArray<T>(items: T[]): T[] {
+  return new Array().concat(items);
+}
+
+let numArray = getArray<number>([1, 2, 3, 4]);
+let strArray = getArray<string>(["one", "two", "three"]);
+
+numArray.push(5);
